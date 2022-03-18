@@ -41,17 +41,17 @@ def play_all_days():
             if new_shares * random_price <= dollars:
                 print(f"You bought {shares} shares.")
                 dollars -= new_shares * random_price
-                shares = new_shares
+                shares += new_shares
         if choice == 2:
             print(f"Allowed shares number: {shares}.")
-            new_shares = int(input("How many shares do you want to buy? "))
+            new_shares = int(input("How many shares do you want to sell? "))
             os.system("cls")
             if new_shares * random_price > shares:
                 print("Too many shares...")
             if new_shares * random_price <= shares:
                 print(f"You sold out {shares} shares.")
-                dollars -= new_shares * random_price
-                shares = new_shares
+                dollars += new_shares * random_price
+                shares -= new_shares
         if choice == 3:
             continue
     os.system("cls")
